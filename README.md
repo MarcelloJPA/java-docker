@@ -1,25 +1,53 @@
-# Java Spring Boot with Docker
+## Java Spring Boot with Docker
 
-This project is a simple Java application containerized using Docker. 
-It was created to demonstrate how to translate a Node.js Docker workflow into a Java (Spring Boot) environment.
+This project is a simple **Spring Boot application containerized with Docker**.
+It demonstrates how a typical **Node.js Docker workflow** can be adapted to a **Java + Spring Boot environment**.
+
+The goal is to show a basic structure for building and running a Java application inside a Docker container.
+
+---
 
 ## Technologies
+
 * Java 21
 * Spring Boot 3
 * Maven
 * Docker
 
-## How to run locally
+---
 
-1. **Build the application:**
-   ```bash
-   ./mvnw package -DskipTests
+## How to Run Locally
 
-2.Build the Docker Image:
+### 1. Build the Application
 
-Bash
+```bash
+./mvnw clean package -DskipTests
+```
+
+This command compiles the project and generates the `.jar` file inside the `target` folder.
+
+---
+
+### 2. Build the Docker Image
+
+```bash
 docker build -t app-cello .
-Run the Container:
+```
 
-Bash
+This creates a Docker image named **app-cello** using the `Dockerfile` in the project.
+
+---
+
+### 3. Run the Container
+
+```bash
 docker run -p 8080:8080 app-cello
+```
+
+The application will be available at:
+
+```
+http://localhost:8080
+```
+
+
