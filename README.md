@@ -14,3 +14,12 @@ It was created to demonstrate how to translate a Node.js Docker workflow into a 
 1. **Build the application:**
    ```bash
    ./mvnw package -DskipTests
+
+2.Build the Docker Image:
+
+Bash
+docker build -t app-cello .
+Run the Container:
+
+Bash
+docker run -p 8080:8080 app-cello
